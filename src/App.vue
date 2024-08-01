@@ -21,15 +21,10 @@ const playersData = ref([
   }
 ])
 
-const addOnePoint = (index) => {
-  playersData.value[index].actualScore += 1
+const addOnePoint = (index, numberPoint) => {
+  playersData.value[index].actualScore += numberPoint
 }
-const addTwoPoints = (index) => {
-  playersData.value[index].actualScore += 2
-}
-const addThreePoints = (index) => {
-  playersData.value[index].actualScore += 3
-}
+
 const reset = () => {
   for (let i = 0; i < playersData.value.length; i++) {
     playersData.value[i].actualScore = 0
@@ -59,9 +54,9 @@ const reset = () => {
         </div>
 
         <div>
-          <button @click="addOnePoint(index)">Add 1 point</button>
-          <button @click="addTwoPoints(index)">Add 2 points</button>
-          <button @click="addThreePoints(index)">Add 3 points</button>
+          <button @click="addOnePoint(index, 1)">Add 1 point</button>
+          <button @click="addOnePoint(index, 2)">Add 2 point</button>
+          <button @click="addOnePoint(index, 5)">Add 5 point</button>
         </div>
       </div>
     </div>
