@@ -54,9 +54,9 @@ const reset = () => {
           <p>{{ player.actualScore }}</p>
         </div>
         <div class="pointBloc">
-          <div v-for="point in pointsValueList">
-            <button @click="addOnePoint(index, point)">Add {{ point }} point</button>
-          </div>
+          <button v-for="point in pointsValueList" @click="addOnePoint(index, point)">
+            Add {{ point }} point
+          </button>
         </div>
       </div>
     </div>
@@ -137,7 +137,7 @@ button:hover {
   cursor: pointer;
   color: white;
   scale: 1.2;
-  transition-duration: 0.5s;
+  transition: scale 0.5s;
 }
 button:active {
   opacity: 50%;
